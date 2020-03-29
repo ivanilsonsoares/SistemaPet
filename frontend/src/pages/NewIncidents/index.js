@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Link, useHistory } from 'react-router-dom'
 import {FiArrowLeft} from 'react-icons/fi';
 import './styles.css';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 import Api from '../../services/api'
 
 export default function NewIncidents(){
@@ -40,9 +40,8 @@ export default function NewIncidents(){
             <div className="content">
                 <section>
                     <img src={logo} alt="Be The Hero"/>
-                    <h1>Cadastro novo caso</h1>
-                    <p>Faça seu cadastro na plataforma Faça seu cadastro na plataforma 
-                        Faça seu cadastro na plataforma</p>
+                    <h1>Cadastro de noticia</h1>
+                    <p>Faça o cadastro da notica na platafroma, as informações ficaram disponiveis na mesma.</p>
                     <Link className="back-link" to="/profile">
                         <FiArrowLeft size={16} color='#E02041' />
                         voltar para home
@@ -61,12 +60,10 @@ export default function NewIncidents(){
                     onChange={e => setDescription(e.target.value)}
                     />
                     <input 
-                    placeholder="valor em reais "
+                    placeholder="Valor"
                     value={value}
                     onChange={e => setValue(e.target.value)}
-                    
                     />
-
                     <button className="button" type="submit">Cadastrar</button>
                 </form>
             </div>

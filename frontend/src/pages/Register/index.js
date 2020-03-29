@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Link, useHistory } from 'react-router-dom'
 import {FiArrowLeft} from 'react-icons/fi';
 import './styles.css';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 import Api from '../../services/api'
 
 
@@ -54,7 +54,7 @@ export default function Register(){
 
                 <form onSubmit={handleRegister}>
                     <input 
-                    placeholder="Nome da ONG"
+                    placeholder="Nome do usuario"
                     value={name}
                     onChange={e =>setName(e.target.value)}
                     />
