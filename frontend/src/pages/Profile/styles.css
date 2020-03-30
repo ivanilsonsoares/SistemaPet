@@ -12,6 +12,7 @@
 
 .profile-container header img{
     width: 21%;
+    margin-left: 132px;
 }
 
 .profile-container header span{
@@ -44,9 +45,10 @@
 }
  
 .profile-container h1{
-    margin-top: 80px;
+    margin-top: 1px;
     margin-bottom: 24px;
     color: lightyellow;
+    
 }
 
 .profile-container ul{
@@ -92,24 +94,61 @@
     font-size: 16px;
 }
 
-.footer{
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color:#002130ab;
-    color: white;
+.profile-container .content {
+    display: flex;
+}
+
+.profile-container .content ul{
+    width: 75%;
+}
+
+.profile-container .content .not{
+    
+    background-color: floralwhite;
+    margin-left: 3%;
+    height: -webkit-fill-available;
+    border-radius: 3%;
+    width: 22%;
     text-align: center;
 }
+
+.profile-container .content .not h2{
+    color: black;
+    margin-top: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.profile-container .content .not a{
+    text-decoration: none;
+
+}
+.profile-container .content .not h1{
+    color: black;
+    margin-top: 5%;
+}
+
+
 
 .nav-bar{
     padding: 24px;
     border-radius: 8px;
     position: relative;
+    background-color: #FFF;
     width: 83%;
     max-width: 1180px;
     padding: 0 30px;
     margin: 32px auto;
+}
+
+.nav-bar .cont{
+    display: flex;
+    background-position: center;
+    margin-left: 22%;
+}
+
+.nav-bar .cont .space{
+    margin-left: 22%;
 }
 
 .nav-bar .circulo{
@@ -123,25 +162,35 @@
 }
 
 .nav-bar .circulo img{ 
-    width: 88%;
-    margin-left: 6%;
+    width: 75%;
+    margin-left: -4%;
     margin-top: 1%;
 }
 
+.nav-bar .circulo-Gpa { 
+    width: 85%;
+    margin-left: 6%;
+    margin-top: -11%;
+}
 
-
+.nav-bar .circulo-contest { 
+    width: 120%;
+    
+    margin-top: -11%;
+}
 
 .menu ul{
     
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     overflow: hidden;
     background-color: #002130ab;
 }
 
 .menu img {
     width: 10%;
+    margin-left: 132px;
 }
 
 .menu li {
@@ -158,4 +207,15 @@
   
 .menu li a:hover {
     background-color: #111;
+}
+
+.footer{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#002130ab;
+    color: white;
+    text-align: center;
+    padding: 1%;
 }
