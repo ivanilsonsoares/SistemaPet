@@ -5,45 +5,10 @@
     margin: 32px auto;
 }
 
-.profile-container header{
-    display: flex;
-    align-items: center;
+img.d-block.w-50 {
+    margin-left: 25%;
+    margin-top: 12px;
 }
-
-.profile-container header img{
-    width: 21%;
-    margin-left: 132px;
-}
-
-.profile-container header span{
-    font-size: 20px;
-    margin-left: 24px;
-    color: lightyellow;
-}
-
-.profile-container header span{
-    height: 64px;
-}
-
-.profile-container header a{
-    width: 260px;
-    margin-left: auto;
-    margin-top: 0;
-}
-.profile-container header button{
-    height: 60px;
-    width: 60px;
-    border-radius: 4px;
-    border: 1px solid #dcdce6;
-    background: transparent;
-    margin-left: 16px;
-    transition: border-color 0.2s;
-}
-
-.profile-container header button:hover{
-    border-color: #999;
-}
- 
 .profile-container h1{
     margin-top: 1px;
     margin-bottom: 24px;
@@ -102,14 +67,13 @@
     width: 75%;
 }
 
-.profile-container .content .not{
-    
-    background-color: floralwhite;
+.profile-container .content .not {
+    background-color: white;
     margin-left: 3%;
     height: -webkit-fill-available;
     border-radius: 3%;
     width: 22%;
-    text-align: center;
+    
 }
 
 .profile-container .content .not a h2{
@@ -128,7 +92,9 @@
 .profile-container .content .not h1{
     color: black;
     margin-top: 5%;
+    text-align: center;
 }
+
 
 
 
