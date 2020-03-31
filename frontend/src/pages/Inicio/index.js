@@ -35,6 +35,7 @@ export default function Profile(){
             <div className="menu">
                 <ul> 
                     <img src={LogoImg} alt="Pet-SI"/>
+                    <li><Link to="/login">Login</Link></li>
                     <li><Link to="/sobre">Sobre o programa</Link></li>
                     <li><Link to="/equipe">Equipe</Link></li>
                     <li><Link to="/projetos">Projetos</Link></li>

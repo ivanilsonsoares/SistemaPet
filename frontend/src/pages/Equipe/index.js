@@ -9,6 +9,22 @@ import Contest from '../../assets/contest.png';
 import {FiMapPin} from 'react-icons/fi';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+/* Imagens bolsistas*/
+import Edval from '../../assets/Equipe/edval.jpg';
+import Ronier from '../../assets/Equipe/ronier.jpg';
+import Camilo from '../../assets/Equipe/camilo.jpg';
+import Ivan from '../../assets/Equipe/ivan.jpg';
+import Vitinho from '../../assets/Equipe/victor.jpg';
+import Padre from '../../assets/Equipe/padre.jpg';
+import Luan from '../../assets/Equipe/luan.jpg';
+import Evenilson from '../../assets/Equipe/even.jpg';
+import Ana from '../../assets/Equipe/kely.jpg';
+import Junior from '../../assets/Equipe/junior.jpg';
+import Jean from '../../assets/Equipe/jean.jpg';
+import Robson from '../../assets/Equipe/robson.jpg';
+import Wladmir from '../../assets/Equipe/edval.jpg';
+
+
 /* import */
 import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row'
@@ -24,6 +40,7 @@ export default function Profile(){
             <div className="menu">
                 <ul> 
                     <img src={LogoImg} alt="Pet-SI"/>
+                    <li><Link to="/incidents/new">Login</Link></li>
                     <li><Link to="/sobre">Sobre o programa</Link></li>
                     <li><Link to="/equipe">Equipe</Link></li>
                     <li><Link to="/projetos">Projetos</Link></li>
@@ -38,7 +55,7 @@ export default function Profile(){
                         <Col></Col>
                         <Col>
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={LogoImg} />
+                            <Card.Img variant="top" src={Wladmir} />
                             <Card.Body>
                                 <Card.Title>Wladmir Tavares</Card.Title>
                                 <Card.Text>
@@ -59,7 +76,7 @@ export default function Profile(){
                     <Row>
                         <Col>
                             <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={LogoImg} />
+                                <Card.Img variant="top" src={Edval} />
                                 <Card.Body>
                                     <Card.Title>Edval Júnior</Card.Title>
                                     <Card.Text>
@@ -72,7 +89,7 @@ export default function Profile(){
                         </Col>
                         <Col>
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={LogoImg} />
+                            <Card.Img variant="top" src={Ronier} />
                             <Card.Body>
                                 <Card.Title>Ronier Lima</Card.Title>
                                 <Card.Text>
@@ -85,7 +102,7 @@ export default function Profile(){
                         </Col>
                         <Col>
                         <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={LogoImg} />
+                                <Card.Img variant="top" src={Ana} />
                                 <Card.Body>
                                     <Card.Title>Ana Kely</Card.Title>
                                     <Card.Text>
@@ -104,7 +121,7 @@ export default function Profile(){
                     <Row>
                         <Col>
                             <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={LogoImg} />
+                                <Card.Img variant="top" src={Ivan} />
                                 <Card.Body>
                                     <Card.Title>Ivanilson Soares</Card.Title>
                                     <Card.Text>
@@ -117,7 +134,7 @@ export default function Profile(){
                         </Col>
                         <Col>
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={LogoImg} />
+                            <Card.Img variant="top" src={Camilo} />
                             <Card.Body>
                                 <Card.Title>Camilo Lima</Card.Title>
                                 <Card.Text>
@@ -130,7 +147,7 @@ export default function Profile(){
                         </Col>
                         <Col>
                         <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={LogoImg} />
+                                <Card.Img variant="top" src={Evenilson} />
                                 <Card.Body>
                                     <Card.Title>Evenilson Liandro</Card.Title>
                                     <Card.Text>
@@ -148,7 +165,7 @@ export default function Profile(){
                     <Row>
                         <Col>
                             <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={LogoImg} />
+                                <Card.Img variant="top" src={Junior} />
                                 <Card.Body>
                                     <Card.Title>Júnior Costa</Card.Title>
                                     <Card.Text>
@@ -161,7 +178,7 @@ export default function Profile(){
                         </Col>
                         <Col>
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={LogoImg} />
+                            <Card.Img variant="top" src={Luan} />
                             <Card.Body>
                                 <Card.Title>Luanderson Evangelista</Card.Title>
                                 <Card.Text>
@@ -174,7 +191,7 @@ export default function Profile(){
                         </Col>
                         <Col>
                         <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={LogoImg} />
+                                <Card.Img variant="top" src={Robson} />
                                 <Card.Body>
                                     <Card.Title>Robson Silva</Card.Title>
                                     <Card.Text>
@@ -191,7 +208,7 @@ export default function Profile(){
                     <Row>
                         <Col>
                             <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={LogoImg} />
+                                <Card.Img variant="top" src={Padre} />
                                 <Card.Body>
                                     <Card.Title>Vitor Pinheiro</Card.Title>
                                     <Card.Text>
@@ -204,7 +221,7 @@ export default function Profile(){
                         </Col>
                         <Col>
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={LogoImg} />
+                            <Card.Img variant="top" src={Vitinho} />
                             <Card.Body>
                                 <Card.Title>Victor Sousa</Card.Title>
                                 <Card.Text>
@@ -217,7 +234,7 @@ export default function Profile(){
                         </Col>
                         <Col>
                         <Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src={LogoImg} />
+                                <Card.Img variant="top" src={Jean} />
                                 <Card.Body>
                                     <Card.Title>Jean Pantoja</Card.Title>
                                     <Card.Text>
