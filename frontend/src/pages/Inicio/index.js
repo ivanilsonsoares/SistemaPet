@@ -7,11 +7,13 @@ import Sisac from '../../assets/sisac.png';
 import Gpa from '../../assets/gpa.jpg';
 import Ufc from '../../assets/ufc.jpg';
 import Contest from '../../assets/contest.png';
+
 import Carousel from 'react-bootstrap/Carousel';
 import {FiTrash2, FiMapPin, FiChevronRight} from 'react-icons/fi';
 import api from '../../services/api';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 /* import */
 
 
@@ -46,10 +48,10 @@ export default function Profile(){
             <div className="menu">
                 <ul> 
                     <img src={LogoImg} alt="Pet-SI"/>
-                    <li><a href="#about">Sobre o programa</a></li>
-                    <li><a href="#news">Equipe</a></li>
-                    <li><a href="#contact">Projetos</a></li>
-                    <li><a class="active" href="#home">Home</a></li>
+                    <li><Link to="/sobre">Sobre o programa</Link></li>
+                    <li><Link to="/equipe">Equipe</Link></li>
+                    <li><Link to="/projetos">Projetos</Link></li>
+                    <li><Link className="active" to="/">Home</Link></li>
                 </ul>
             </div>
              {/* Carrosel */}

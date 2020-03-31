@@ -6,17 +6,16 @@ import Savi from '../../assets/savi.png';
 import Sisac from '../../assets/sisac.png';
 import Gpa from '../../assets/gpa.jpg';
 import Contest from '../../assets/contest.png';
-
-import {Link, /* useHistory */} from 'react-router-dom';
-import {FiPower, FiTrash2, FiMapPin, FiChevronRight} from 'react-icons/fi';
+import { FiMapPin, FiChevronRight} from 'react-icons/fi';
 import api from '../../services/api';
 import './styles.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+/* import */
+import { Link } from 'react-router-dom';
 
 export default function Profile(){
     const [incidents, setIncidents ] = useState([]);
     const ongId = localStorage.getItem('ongId');
-    const ongName = localStorage.getItem('ongName');
-   /*  const history = useHistory(); */
     useEffect(()=>{
         api.get('profile', {
             headers:{
@@ -27,69 +26,38 @@ export default function Profile(){
         })
     },[ongId])
 
-    async function handleDeleteIncident(id){
-        try{
-            await api.delete(`incidents/${id}`,  {
-                headers:{
-                    Authorization: ongId,
-                }
-            });
-            setIncidents(incidents.filter(incident => incident.id !== id));
-        }catch(err){
-            alert("Erro, tente novamente.");
-        }
-    }
-
-/*     async function handleLogout(){
-        localStorage.clear();
-
-        history.push('/');
-
-    } */
     return(
         <div>
             <div className="menu">
                 <ul> 
-                    <img src={LogoImg} alt="Be The Hero"/>
-                    <li>
-                        <a /* onClick={handleLogout}  */ href={'/'} type="button">
-                            <FiPower size={18} color="#E02041"/>
-                        </a>
-                    </li>
-                    <li><Link to="incidents/new">Cadastrar nova informação</Link></li>
-                    <li><Link to="/register">Cadastrar Usuario</Link></li>
+                    <img src={LogoImg} alt="Pet-SI"/>
                     <li><Link to="/sobre">Sobre o programa</Link></li>
                     <li><Link to="/equipe">Equipe</Link></li>
                     <li><Link to="/projetos">Projetos</Link></li>
                     <li><Link className="active" to="/">Home</Link></li>
                 </ul>
             </div>
+
             <div className="profile-container">
-            <header>
-                <span>Bem- vindo, {ongName}</span>
-            </header>
-            <h1>Infomações Cadastradas</h1>
+
             <div className="content">
                 <ul>
                     {incidents.map(incident => (
                         <li key={incident.id}>
-                            <strong>Caso:</strong>
+                            <strong>Nome do Projeto:</strong>
                             <p>{incident.title}</p>
                             <strong>Descriçaão:</strong>
                             <p>{incident.description}</p>
 
-                            <strong>Valor:</strong>
+                            <strong>Organização:</strong>
                             <p>{Intl.NumberFormat('pt-BR',{style: 'currency' , currency:'BRL'}).format(incident.value)}</p>
 
-                            <button onClick={() => handleDeleteIncident(incident.id)} type="button">
-                                <FiTrash2 size={20} color="#a8a8a3"/>
-                            </button>
                     </li>
                     ))}
                 </ul>
                 
                 <div className="not">
-                <h1>Artigos</h1>
+                    <h1>Artigos</h1>
                     <a 
                         href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
                         <h2>
@@ -124,11 +92,9 @@ export default function Profile(){
                             <FiChevronRight size={18} color="#000"/> 
                             A aplicação da refatoração de software para a solução da complexidade no código do SEven
                         </h2>
-                    </a>
-                    
+                    </a>  
                 </div>
             </div>
-            
         </div>
 
         <div className="nav-bar">
@@ -181,7 +147,5 @@ export default function Profile(){
         </div>
         
         </div>
-        
-        
     );
 }
