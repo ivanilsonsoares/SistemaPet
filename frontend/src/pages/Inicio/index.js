@@ -9,7 +9,7 @@ import Ufc from '../../assets/ufc.jpg';
 import Contest from '../../assets/contest.png';
 
 import Carousel from 'react-bootstrap/Carousel';
-import {FiTrash2, FiMapPin, FiChevronRight} from 'react-icons/fi';
+import {FiMapPin, FiChevronRight} from 'react-icons/fi';
 import api from '../../services/api';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -29,19 +29,6 @@ export default function Profile(){
             setIncidents(response.data);
         })
     },[ongId])
-
-    async function handleDeleteIncident(id){
-        try{
-            await api.delete(`incidents/${id}`,  {
-                headers:{
-                    Authorization: ongId,
-                }
-            });
-            setIncidents(incidents.filter(incident => incident.id !== id));
-        }catch(err){
-            alert("Erro, tente novamente.");
-        }
-    }
 
     return(
         <div>
@@ -94,10 +81,6 @@ export default function Profile(){
 
                             <strong>Valor:</strong>
                             <p>{Intl.NumberFormat('pt-BR',{style: 'currency' , currency:'BRL'}).format(incident.value)}</p>
-
-                            <button onClick={() => handleDeleteIncident(incident.id)} type="button">
-                                <FiTrash2 size={20} color="#a8a8a3"/>
-                            </button>
                     </li>
                     ))}
                 </ul>
