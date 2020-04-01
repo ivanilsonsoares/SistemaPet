@@ -32,6 +32,7 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import Accordion from 'react-bootstrap/Accordion'
 
 export default function Profile(){
 
@@ -59,10 +60,20 @@ export default function Profile(){
                             <Card.Body>
                                 <Card.Title>Wladmir Tavares</Card.Title>
                                 <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Bolsista desde 2018.1</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                                <Button variant="primary">Mais informações</Button>
                             </Card.Body>
                             </Card>
                         </Col>
@@ -80,10 +91,20 @@ export default function Profile(){
                                 <Card.Body>
                                     <Card.Title>Edval Júnior</Card.Title>
                                     <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                        <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Bolsista desde 2018.1</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                     </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
+                                    <Button variant="primary">Mais informações</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -93,10 +114,20 @@ export default function Profile(){
                             <Card.Body>
                                 <Card.Title>Ronier Lima</Card.Title>
                                 <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Bolsista desde 2019.1</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                                <Button variant="primary">Mais informações</Button>
                             </Card.Body>
                             </Card>
                         </Col>
@@ -106,10 +137,20 @@ export default function Profile(){
                                 <Card.Body>
                                     <Card.Title>Ana Kely</Card.Title>
                                     <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Bolsista desde 2019.1</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                     </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
+                                    <Button variant="primary">Mais informações</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -125,10 +166,27 @@ export default function Profile(){
                                 <Card.Body>
                                     <Card.Title>Ivanilson Soares</Card.Title>
                                     <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Técnico em Redes de Computadores pela
+                                                    escola profissionalizante José Vidal Alves, 
+                                                    graduando em Sistemas de Informação na Universidade 
+                                                    Federal do Ceará - Campus Quixadá desde 2018.1, 
+                                                    bolsista do Programa de Educação Tutorial - Sistemas de Informação 
+                                                    ( PET-SI) desde de 2019, Coordenador de mídias e comunicação do programa. 
+                                                    Segue a vertente de Programação, com ênfase na área de segurança da 
+                                                    informação.</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                     </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
+                                    <Button variant="primary">Mais informações</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -138,10 +196,20 @@ export default function Profile(){
                             <Card.Body>
                                 <Card.Title>Camilo Lima</Card.Title>
                                 <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Bolsista desde 2019.1</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                                <Button variant="primary">Mais informações</Button>
                             </Card.Body>
                             </Card>
                         </Col>
@@ -151,10 +219,20 @@ export default function Profile(){
                                 <Card.Body>
                                     <Card.Title>Evenilson Liandro</Card.Title>
                                     <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Bolsista desde 2019.1</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                     </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
+                                    <Button variant="primary">Mais informações</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -169,10 +247,20 @@ export default function Profile(){
                                 <Card.Body>
                                     <Card.Title>Júnior Costa</Card.Title>
                                     <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Bolsista desde 2019.1</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                     </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
+                                    <Button variant="primary">Mais informações</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -182,10 +270,20 @@ export default function Profile(){
                             <Card.Body>
                                 <Card.Title>Luanderson Evangelista</Card.Title>
                                 <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Bolsista desde 2019.1</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                                <Button variant="primary">Mais informações</Button>
                             </Card.Body>
                             </Card>
                         </Col>
@@ -195,10 +293,20 @@ export default function Profile(){
                                 <Card.Body>
                                     <Card.Title>Robson Silva</Card.Title>
                                     <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Bolsista desde 2018.1</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                     </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
+                                    <Button variant="primary">Mais informações</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -212,10 +320,20 @@ export default function Profile(){
                                 <Card.Body>
                                     <Card.Title>Vitor Pinheiro</Card.Title>
                                     <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Bolsista desde 2019.1</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                     </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
+                                    <Button variant="primary">Mais informações</Button>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -225,10 +343,20 @@ export default function Profile(){
                             <Card.Body>
                                 <Card.Title>Victor Sousa</Card.Title>
                                 <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Bolsista desde 2019.1</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+                                <Button variant="primary">Mais informações</Button>
                             </Card.Body>
                             </Card>
                         </Col>
@@ -238,10 +366,20 @@ export default function Profile(){
                                 <Card.Body>
                                     <Card.Title>Jean Pantoja</Card.Title>
                                     <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    <Accordion defaultActiveKey="1">
+                                            <Card>
+                                                <Card.Header>
+                                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                                    Sobre o bolsista!
+                                                </Accordion.Toggle>
+                                                </Card.Header>
+                                                <Accordion.Collapse eventKey="0">
+                                                <Card.Body><h7>Bolsista desde 2018.1</h7></Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
                                     </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
+                                    <Button variant="primary">Mais informações</Button>
                                 </Card.Body>
                             </Card>
                         </Col>

@@ -2,14 +2,14 @@ const connection = require('../database/connection');
 
 module.exports = {
     async create(request, response){
-        const { id } = request.body;
+        const { email } = request.body;
 
-        const ong = await connection('ongs').where('id', id).select('name').first();
+        const users = await connection('users').where('email', email).select('name').first();
 
-        if(!ong){
-            return response.status(400).json({ Error: 'No ONG found with this ID. '});
+        if(!users){
+            return response.status(400).json({ Error: 'Usuário não encontrado com esse email. '});
         }
 
-        return response.json(ong);
+        return response.json(users);
     }
 }

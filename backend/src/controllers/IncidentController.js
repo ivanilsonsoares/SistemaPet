@@ -4,42 +4,46 @@ module.exports ={
     async index(request,response){
         const {page = 1} = request.query;
 
-        const [count] = await connection('incidents').count();
 
-        console.log(count);
-
-        const incidents = await connection('incidents').join('ongs', 'ong_id', '=', 'incidents.ong_id')
+        const incidents = await connection('incidents').join('users', 'user_email', '=', 'incidents.user_email')
             .limit(5).offset((page - 1) * 5).select(['incidents.*'
-            ,'ongs.name'
-            ,'ongs.whatsapp'
-            ,'ongs.email'
-            ,'ongs.city'
-            ,'ongs.uf']);
-        response.header('X-Total-Count', count['count(*)']); 
+            ,'users.name'
+            ,'users.email']);
+     
         return response.json(incidents);
     },
 
+    async buscar(request, response){
+        const { title } = request.body;
+
+        const incidents = await connection('incidents').where('title', title).select('*');
+
+        return response.json(incidents);
+    },
+
+    //cria noticia pelo email do usuário
     async create(request, response){
-        const{title , description, value} = request.body;
-        const ong_id = request.headers.authorization;
+        const{title , description} = request.body;
+        const user_email = request.headers.authorization;
 
         const [id] = await connection('incidents').insert({
             title,
             description,
-            value,
-            ong_id
+            user_email
         });
 
         return response.json({ id });
     },
+
+    //deleta noticia pelo email do usuário
     async delete(request,response){
         const { id } = request.params;
-        const ong_id = request.headers.authorization;
+        const user_email = request.headers.authorization;
 
-        const incident = await connection('incidents').where('id', id).select('ong_id').first();
+        const incident = await connection('incidents').where('id', id).select('user_email').first();
 
-        if(incident.ong_id != ong_id){
-            return response.status(401).json({ error: 'Operetion not permitted.'});
+        if(incident.user_email != user_email){
+            return response.status(401).json({ error: 'Você não pode realizar essa operação.'});
         }
 
         await connection('incidents').where('id', id).delete();

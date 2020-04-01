@@ -7,16 +7,16 @@ import logo from '../../assets/logo.png';
 import api from '../../services/api';
 
 export default function Logon(){
-    const [id,setId] = useState('');
+    const [email,setEmail] = useState('');
 
     const history = useHistory();
     async function handleLogin(e){
         e.preventDefault();
 
         try{
-            const response = await api.post('sessions', { id });
+            const response = await api.post('sessions', { email });
 
-            localStorage.setItem('ongId',id);
+            localStorage.setItem('ongId',email);
             localStorage.setItem('ongName',response.data.name);
 
             history.push('/profile');
@@ -35,8 +35,8 @@ export default function Logon(){
                         <center> <h1>Faça seu Login</h1> </center> 
                         <input 
                         placeholder="Digite seu e-mail"
-                        value={id}
-                        onChange={e =>setId(e.target.value)}
+                        value={email}
+                        onChange={e =>setEmail(e.target.value)}
                         />
                         <button className="button" type="submit">Entrar</button>
                         *Acesso restrito

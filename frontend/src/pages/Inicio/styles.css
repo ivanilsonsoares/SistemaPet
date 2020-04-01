@@ -6,8 +6,8 @@
 }
 
 img.d-block.w-50 {
-    margin-left: 25%;
-    margin-top: 12px;
+    margin-left: 0 !important;
+    margin-top:  0 !important;
 }
 .profile-container h1{
     margin-top: 1px;

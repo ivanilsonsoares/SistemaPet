@@ -5,7 +5,8 @@ import Sippa from '../../assets/sippa.png';
 import Savi from '../../assets/savi.png';
 import Sisac from '../../assets/sisac.png';
 import Gpa from '../../assets/gpa.jpg';
-import Ufc from '../../assets/ufc.jpg';
+import Ufc1 from '../../assets/camp.png';
+
 import Contest from '../../assets/contest.png';
 
 import Carousel from 'react-bootstrap/Carousel';
@@ -28,7 +29,9 @@ export default function Profile(){
         }).then(response =>{
             setIncidents(response.data);
         })
-    },[ongId])
+    },[ongId]);
+
+    
 
     return(
         <div>
@@ -46,25 +49,25 @@ export default function Profile(){
                 <Carousel >
                     <Carousel.Item>
                         <img
-                        className="d-block w-50 lt"
-                        src={Ufc}
+                        className="d-block w-100 lt"
+                        src={Ufc1}
                         alt="First slide"
                         />
                         <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        {/* <h3>First slide label</h3>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                        className="d-block w-50"
-                        src={Ufc}
+                        className="d-block w-100"
+                        src={Ufc1}
                         alt="Third slide"
                         />
 
                         <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        {/* <h3>Second slide label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
                         </Carousel.Caption>
                     </Carousel.Item>
 
@@ -75,13 +78,10 @@ export default function Profile(){
                 <ul>
                     {incidents.map(incident => (
                         <li key={incident.id}>
-                            <strong>Caso:</strong>
+                            <strong>Titulo:</strong>
                             <p>{incident.title}</p>
-                            <strong>Descriçaão:</strong>
+                            <strong>Descrição:</strong>
                             <p>{incident.description}</p>
-
-                            <strong>Valor:</strong>
-                            <p>{Intl.NumberFormat('pt-BR',{style: 'currency' , currency:'BRL'}).format(incident.value)}</p>
                     </li>
                     ))}
                 </ul>
@@ -96,31 +96,32 @@ export default function Profile(){
                         </h2>
                     </a>
                     <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
+                        href="https://drive.google.com/file/d/1BqswjUeY6i_MuOLXojJOa4TSzZMlBXvF/view?usp=sharing">
                         <h2>
                             <FiChevronRight size={18} color="#000"/> 
-                            A aplicação da refatoração de software para a solução da complexidade no código do SEven
+                            Um Estudo Sobre Diferentes Abordagens para Resolução do Problema Red-Blue Dominating Set
                         </h2>
                     </a>
                     <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
+                        href="https://drive.google.com/file/d/1X6u_KP-ahvcMBmKT34LpLJynIgXrE-yp/view?usp=sharing">
                         <h2>
                             <FiChevronRight size={18} color="#000"/> 
-                            A aplicação da refatoração de software para a solução da complexidade no código do SEven
+                            Proteção de Redes na Gestão da Segurança da Informação
                         </h2>
                     </a>
                     <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
+                        href="https://drive.google.com/file/d/1SjJEwsVX5q6RXVX_gLX9TEXS39lfyKaa/view?usp=sharing">
                         <h2>
                             <FiChevronRight size={18} color="#000"/> 
-                            A aplicação da refatoração de software para a solução da complexidade no código do SEven
+                            Impacto da tecnologia na perda de foco na hora de estudar
                         </h2>
                     </a>
                     <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
+                        href="https://drive.google.com/file/d/14HQTVmkP_e5Ki5OBbPjYz-0kf-q0tgJJ/view?usp=sharing">
                         <h2>
                             <FiChevronRight size={18} color="#000"/> 
                             A aplicação da refatoração de software para a solução da complexidade no código do SEven
+
                         </h2>
                     </a>  
                 </div>

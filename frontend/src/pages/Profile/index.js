@@ -7,7 +7,7 @@ import Sisac from '../../assets/sisac.png';
 import Gpa from '../../assets/gpa.jpg';
 import Contest from '../../assets/contest.png';
 
-import {Link, /* useHistory */} from 'react-router-dom';
+import {Link, useHistory } from 'react-router-dom';
 import {FiPower, FiTrash2, FiMapPin, FiChevronRight} from 'react-icons/fi';
 import api from '../../services/api';
 import './styles.css';
@@ -16,7 +16,7 @@ export default function Profile(){
     const [incidents, setIncidents ] = useState([]);
     const ongId = localStorage.getItem('ongId');
     const ongName = localStorage.getItem('ongName');
-   /*  const history = useHistory(); */
+    const history = useHistory(); 
     useEffect(()=>{
         api.get('profile', {
             headers:{
@@ -40,28 +40,29 @@ export default function Profile(){
         }
     }
 
-/*     async function handleLogout(){
+    async function handleLogout(){
         localStorage.clear();
 
         history.push('/');
 
-    } */
+    }
     return(
         <div>
             <div className="menu">
                 <ul> 
                     <img src={LogoImg} alt="Be The Hero"/>
                     <li>
-                        <a /* onClick={handleLogout}  */ href={'/'} type="button">
+                        <a onClick={handleLogout}   href={'/'} type="button">
                             <FiPower size={18} color="#E02041"/>
                         </a>
                     </li>
+                    <li><Link to="/projets/new">Cadastrar projeto</Link></li>
                     <li><Link to="incidents/new">Cadastrar nova informação</Link></li>
                     <li><Link to="/register">Cadastrar Usuario</Link></li>
                     <li><Link to="/sobre">Sobre o programa</Link></li>
                     <li><Link to="/equipe">Equipe</Link></li>
-                    <li><Link to="/projetos">Projetos</Link></li>
-                    <li><Link className="active" to="/">Home</Link></li>
+                    <li><Link to="/list">Projetos</Link></li>
+                    <li><Link className="active" to="/profile">Home</Link></li>
                 </ul>
             </div>
             <div className="profile-container">
@@ -73,13 +74,12 @@ export default function Profile(){
                 <ul>
                     {incidents.map(incident => (
                         <li key={incident.id}>
-                            <strong>Caso:</strong>
+                            <strong>Titulo:</strong>
                             <p>{incident.title}</p>
-                            <strong>Descriçaão:</strong>
+                            <strong>Descrição:</strong>
                             <p>{incident.description}</p>
-
-                            <strong>Valor:</strong>
-                            <p>{Intl.NumberFormat('pt-BR',{style: 'currency' , currency:'BRL'}).format(incident.value)}</p>
+                            <strong>Cadastro feito:</strong>
+                            <p>{incident.user_email}</p>
 
                             <button onClick={() => handleDeleteIncident(incident.id)} type="button">
                                 <FiTrash2 size={20} color="#a8a8a3"/>
@@ -181,7 +181,6 @@ export default function Profile(){
         </div>
         
         </div>
-        
         
     );
 }

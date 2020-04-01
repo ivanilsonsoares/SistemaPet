@@ -1,0 +1,73 @@
+import React, {useState} from 'react';
+import { Link, useHistory } from 'react-router-dom'
+import {FiArrowLeft} from 'react-icons/fi';
+import './styles.css';
+import logo from '../../assets/logo.png';
+import Api from '../../services/api'
+
+export default function NewIncidents(){
+    const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
+    const [organizadores, setOrganizadores] = useState('');
+    const ongId = localStorage.getItem('ongId');
+    const history = useHistory();
+    async function handleNewIncidents(e){
+        e.preventDefault();
+
+        const data ={
+            name,
+            description,
+            organizadores,
+        };
+
+        try{
+            await Api.post('projects', data,{
+                headers:{
+                    Authorization: ongId,
+                }
+            });
+
+            history.push('/profile');
+        }catch(err){
+            alert('Erro no cadastro, tente novamento.');
+        }
+
+    }
+
+
+    return(
+        <div className="new-incidents-container">
+            <div className="content">
+                <section>
+                    <img src={logo} alt="Be The Hero"/>
+                    <h1>Cadastrar um novo projeto</h1>
+                    <p>Faça o cadastro de projetos na platafroma, as informações ficaram disponiveis na mesma.</p>
+                    <Link className="back-link" to="/profile">
+                        <FiArrowLeft size={16} color='#E02041' />
+                        voltar para home
+                    </Link>
+                </section>
+
+                <form onSubmit={handleNewIncidents}>
+                    <input 
+                    placeholder="Nomde do projeto"
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    />
+                    <textarea 
+                    placeholder="Descrição"
+                    value={description}
+                    onChange={e => setDescription(e.target.value)}
+                    />
+                    <input 
+                    placeholder="Organizadores"
+                    value={organizadores}
+                    onChange={e => setOrganizadores(e.target.value)}
+                    />
+
+                    <button className="button" type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    );
+}

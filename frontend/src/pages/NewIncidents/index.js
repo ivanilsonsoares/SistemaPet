@@ -8,7 +8,6 @@ import Api from '../../services/api'
 export default function NewIncidents(){
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [value, setValue] = useState('');
     const ongId = localStorage.getItem('ongId');
     const history = useHistory();
     async function handleNewIncidents(e){
@@ -17,7 +16,6 @@ export default function NewIncidents(){
         const data ={
             title,
             description,
-            value,
         };
 
         try{
@@ -59,11 +57,7 @@ export default function NewIncidents(){
                     value={description}
                     onChange={e => setDescription(e.target.value)}
                     />
-                    <input 
-                    placeholder="Valor"
-                    value={value}
-                    onChange={e => setValue(e.target.value)}
-                    />
+
                     <button className="button" type="submit">Cadastrar</button>
                 </form>
             </div>

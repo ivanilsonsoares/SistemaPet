@@ -14,15 +14,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
 export default function Profile(){
-    const [incidents, setIncidents ] = useState([]);
-    const ongId = localStorage.getItem('ongId');
+    const [projects, setProjects] = useState([]);
+    const ongId = localStorage.getItem('Id');
     useEffect(()=>{
-        api.get('profile', {
+        api.get('projects', {
             headers:{
                 Authorization: ongId,
             }
         }).then(response =>{
-            setIncidents(response.data);
+            setProjects(response.data);
         })
     },[ongId])
 
@@ -42,22 +42,19 @@ export default function Profile(){
 
             <div className="content">
                 <ul>
-                    {incidents.map(incident => (
-                        <li key={incident.id}>
+                    {projects.map(projetos => (
+                        <li key={projetos.id}>
                             <strong>Nome do Projeto:</strong>
-                            <p>{incident.title}</p>
-                            <strong>Descriçaão:</strong>
-                            <p>{incident.description}</p>
-
+                            <p>{projetos.name}</p>
+                            <strong>Descrição:</strong>
+                            <p>{projetos.description}</p>
                             <strong>Organização:</strong>
-                            <p>{Intl.NumberFormat('pt-BR',{style: 'currency' , currency:'BRL'}).format(incident.value)}</p>
-
-                    </li>
+                            <p>{projetos.organizadores}</p>
+                        </li>
                     ))}
                 </ul>
-                
                 <div className="not">
-                    <h1>Artigos</h1>
+                <h1>Artigos</h1>
                     <a 
                         href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
                         <h2>
@@ -66,31 +63,32 @@ export default function Profile(){
                         </h2>
                     </a>
                     <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
+                        href="https://drive.google.com/file/d/1BqswjUeY6i_MuOLXojJOa4TSzZMlBXvF/view?usp=sharing">
                         <h2>
                             <FiChevronRight size={18} color="#000"/> 
-                            A aplicação da refatoração de software para a solução da complexidade no código do SEven
+                            Um Estudo Sobre Diferentes Abordagens para Resolução do Problema Red-Blue Dominating Set
                         </h2>
                     </a>
                     <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
+                        href="https://drive.google.com/file/d/1X6u_KP-ahvcMBmKT34LpLJynIgXrE-yp/view?usp=sharing">
                         <h2>
                             <FiChevronRight size={18} color="#000"/> 
-                            A aplicação da refatoração de software para a solução da complexidade no código do SEven
+                            Proteção de Redes na Gestão da Segurança da Informação
                         </h2>
                     </a>
                     <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
+                        href="https://drive.google.com/file/d/1SjJEwsVX5q6RXVX_gLX9TEXS39lfyKaa/view?usp=sharing">
                         <h2>
                             <FiChevronRight size={18} color="#000"/> 
-                            A aplicação da refatoração de software para a solução da complexidade no código do SEven
+                            Impacto da tecnologia na perda de foco na hora de estudar
                         </h2>
                     </a>
                     <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
+                        href="https://drive.google.com/file/d/14HQTVmkP_e5Ki5OBbPjYz-0kf-q0tgJJ/view?usp=sharing">
                         <h2>
                             <FiChevronRight size={18} color="#000"/> 
                             A aplicação da refatoração de software para a solução da complexidade no código do SEven
+
                         </h2>
                     </a>  
                 </div>
