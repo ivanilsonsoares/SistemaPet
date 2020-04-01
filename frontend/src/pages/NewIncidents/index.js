@@ -7,7 +7,9 @@ import Api from '../../services/api'
 
 export default function NewIncidents(){
     const [title, setTitle] = useState('');
+/*     const [imagem, setImagem] = useState(null); */
     const [description, setDescription] = useState('');
+    
     const ongId = localStorage.getItem('ongId');
     const history = useHistory();
     async function handleNewIncidents(e){
@@ -15,7 +17,9 @@ export default function NewIncidents(){
 
         const data ={
             title,
+           /*  imagem, */
             description,
+            
         };
 
         try{
@@ -57,7 +61,13 @@ export default function NewIncidents(){
                     value={description}
                     onChange={e => setDescription(e.target.value)}
                     />
-
+{/*                     <label className="imagem">
+                        <input type="file"
+                        value={imagem}
+                        onChange={e => setImagem(e.target.files[0])}
+                        />
+                        
+                    </label> */}
                     <button className="button" type="submit">Cadastrar</button>
                 </form>
             </div>

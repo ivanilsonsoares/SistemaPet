@@ -23,11 +23,13 @@ module.exports ={
 
     //cria noticia pelo email do usuário
     async create(request, response){
+        const {filename} = request.file;
         const{title , description} = request.body;
         const user_email = request.headers.authorization;
 
         const [id] = await connection('incidents').insert({
             title,
+            imagem : filename,
             description,
             user_email
         });

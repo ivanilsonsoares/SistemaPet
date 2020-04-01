@@ -145,7 +145,12 @@ export default function Profile(){
                                                 </Accordion.Toggle>
                                                 </Card.Header>
                                                 <Accordion.Collapse eventKey="0">
-                                                <Card.Body><h7>Bolsista desde 2019.1</h7></Card.Body>
+                                                <Card.Body><h7>Técnica em Informática pela Escola Profissionalizante Antônio 
+                                                    Rodrigues de Oliveira, graduanda em Sistemas de Informação na Universidade 
+                                                    Federal do Ceará - Campus Quixadá desde 2018.1 Atualmente é bolsista do 
+                                                    Programa de Educação Tutorial de Sistemas de Informação (PET-SI) desde 2019.1. 
+                                                    Vice-coordenadora de mídias e comunicação do programa. Tem interesse em 
+                                                    desenvolvimento web/ mobile  e Ciência de Dados.</h7></Card.Body>
                                                 </Accordion.Collapse>
                                             </Card>
                                         </Accordion>
@@ -351,7 +356,12 @@ export default function Profile(){
                                                 </Accordion.Toggle>
                                                 </Card.Header>
                                                 <Accordion.Collapse eventKey="0">
-                                                <Card.Body><h7>Bolsista desde 2019.1</h7></Card.Body>
+                                                <Card.Body><h7>Técnico em Informática pela escola profissionalizante Maria 
+                                                    Cavalcante Costa, graduando em Sistemas de Informação na Universidade 
+                                                    Federal do Ceará - Campus Quixadá desde 2018.1, bolsista do Programa 
+                                                    de Educação Tutorial - Sistemas de Informação ( PET-SI) desde de 2019, 
+                                                    atualmente participando do projeto de ensino “Grupo de Estudos para OBI”. 
+                                                    Segue a vertente de Programação, com ênfase na área de algoritmos.</h7></Card.Body>
                                                 </Accordion.Collapse>
                                             </Card>
                                         </Accordion>

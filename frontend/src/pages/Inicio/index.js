@@ -6,6 +6,7 @@ import Savi from '../../assets/savi.png';
 import Sisac from '../../assets/sisac.png';
 import Gpa from '../../assets/gpa.jpg';
 import Ufc1 from '../../assets/camp.png';
+import slide2 from '../../assets/slide2.png';
 
 import Contest from '../../assets/contest.png';
 
@@ -61,7 +62,7 @@ export default function Profile(){
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src={Ufc1}
+                        src={slide2}
                         alt="Third slide"
                         />
 
@@ -87,6 +88,7 @@ export default function Profile(){
                 </ul>
                 
                 <div className="not">
+                    <div className="color">
                     <h1>Artigos</h1>
                     <a 
                         href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
@@ -123,7 +125,9 @@ export default function Profile(){
                             A aplicação da refatoração de software para a solução da complexidade no código do SEven
 
                         </h2>
-                    </a>  
+                    </a>
+                    </div>
+
                 </div>
             </div>
         </div>
