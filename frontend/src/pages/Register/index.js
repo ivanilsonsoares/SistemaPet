@@ -41,9 +41,9 @@ export default function Register(){
                     <h1>Cadastro</h1>
                     <p>Faça seu cadastro na plataforma Faça seu cadastro na plataforma 
                         Faça seu cadastro na plataforma</p>
-                    <Link className="back-link" to="/">
+                    <Link className="back-link" to="/profile">
                         <FiArrowLeft size={16} color='#E02041' />
-                        Não tenho cadastro
+                        Voltar a home
                     </Link>
                 </section>
 

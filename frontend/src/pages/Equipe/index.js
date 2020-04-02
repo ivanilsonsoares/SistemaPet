@@ -4,8 +4,6 @@ import LogoImg from '../../assets/logo.png';
 import Sippa from '../../assets/sippa.png';
 import Savi from '../../assets/savi.png';
 import Sisac from '../../assets/sisac.png';
-import Gpa from '../../assets/gpa.jpg';
-import Contest from '../../assets/contest.png';
 import {FiMapPin} from 'react-icons/fi';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,7 +20,7 @@ import Ana from '../../assets/Equipe/kely.jpg';
 import Junior from '../../assets/Equipe/junior.jpg';
 import Jean from '../../assets/Equipe/jean.jpg';
 import Robson from '../../assets/Equipe/robson.jpg';
-import Wladmir from '../../assets/Equipe/edval.jpg';
+import Wladmir from '../../assets/Equipe/wlad.png';
 
 
 /* import */
@@ -41,7 +39,7 @@ export default function Profile(){
             <div className="menu">
                 <ul> 
                     <img src={LogoImg} alt="Pet-SI"/>
-                    <li><Link to="/incidents/new">Login</Link></li>
+                    <li><Link to="/login">Login</Link></li>
                     <li><Link to="/sobre">Sobre o programa</Link></li>
                     <li><Link to="/equipe">Equipe</Link></li>
                     <li><Link to="/projetos">Projetos</Link></li>
@@ -64,11 +62,11 @@ export default function Profile(){
                                             <Card>
                                                 <Card.Header>
                                                 <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                                    Sobre o bolsista!
+                                                    Sobre o Tutor!
                                                 </Accordion.Toggle>
                                                 </Card.Header>
                                                 <Accordion.Collapse eventKey="0">
-                                                <Card.Body><h7>Bolsista desde 2018.1</h7></Card.Body>
+                                                <Card.Body><h7>Tutor desde 2020.1</h7></Card.Body>
                                                 </Accordion.Collapse>
                                             </Card>
                                         </Accordion>
@@ -402,52 +400,35 @@ export default function Profile(){
                 
             </div>
         </div>
-
         <div className="nav-bar">
             <h1><FiMapPin size={18} color="#000"/> Links Importantes:</h1>
-            <center>
-            <table>
-            <tr>
-                <td>
-                    <a href="https://academico.quixada.ufc.br/sippa/">
-                        <div className="circulo">
-                            <img src={Sippa} alt="SIPPA"/>
-                        </div>
-                    </a>
-                </td>
-                <td>
-                    <a href="https://academico.quixada.ufc.br/savi/">
-                        <div className="circulo">
-                            <img src={Savi}  alt="SAVI"/>
-                        </div>
-                    </a>
-                </td>
-                <td> 
-                    <a href="https://academico.quixada.ufc.br/sisac/">
-                        <div className="circulo">
-                            <img src={Sisac} alt="SISAC"/>
-                        </div>
-                    </a>
-                </td>
-                <td>
-                    <a href="https://sistemas.quixada.ufc.br/gpa-pesquisa">
-                        <div className="circulo-Gpa">
-                            <img  src={Gpa} alt="GPA"/>
-                        </div>
-                    </a>
-                </td>
-                <td> 
-                    <a href="https://contest.quixada.ufc.br/login">
-                        <div className="circulo-contest">
-                            <img  src={Contest} alt="CONTEST"/>
-                        </div>
-                    </a>
-                </td>
-            </tr>
-        </table>
-            </center>
+                <center>
+                <Row>
+                    <Col>
+                        <a href="https://academico.quixada.ufc.br/sippa/">
+                            <div className="circulo">
+                                <img src={Sippa} alt="SIPPA"/>
+                            </div>
+                        </a>
+                    </Col>
+                    <Col>
+                        <a href="https://academico.quixada.ufc.br/savi/">
+                            <div className="circulo">
+                                <img src={Savi}  alt="SAVI"/>
+                            </div>
+                        </a> 
+                    </Col>
+                    <Col>
+                        <a href="https://academico.quixada.ufc.br/sisac/">
+                            <div className="circulo">
+                                <img src={Sisac} alt="SISAC"/>
+                            </div>
+                        </a>
+                    </Col>
+                </Row>
+                </center>
+                
         </div>
-
         <div class="footer">
             Copyright &copy; 2020 Pet-SI
         </div>

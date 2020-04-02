@@ -4,11 +4,8 @@ import LogoImg from '../../assets/logo.png';
 import Sippa from '../../assets/sippa.png';
 import Savi from '../../assets/savi.png';
 import Sisac from '../../assets/sisac.png';
-import Gpa from '../../assets/gpa.jpg';
 import Ufc1 from '../../assets/camp.png';
 import slide2 from '../../assets/slide2.png';
-
-import Contest from '../../assets/contest.png';
 
 import Carousel from 'react-bootstrap/Carousel';
 import {FiMapPin, FiChevronRight} from 'react-icons/fi';
@@ -16,6 +13,8 @@ import api from '../../services/api';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 /* import */
 
 
@@ -136,47 +135,32 @@ export default function Profile(){
 
         <div className="nav-bar">
             <h1><FiMapPin size={18} color="#000"/> Links Importantes:</h1>
-            <center>
-            <table>
-            <tr>
-                <td>
-                    <a href="https://academico.quixada.ufc.br/sippa/">
-                        <div className="circulo">
-                            <img src={Sippa} alt="SIPPA"/>
-                        </div>
-                    </a>
-                </td>
-                <td>
-                    <a href="https://academico.quixada.ufc.br/savi/">
-                        <div className="circulo">
-                            <img src={Savi}  alt="SAVI"/>
-                        </div>
-                    </a>
-                </td>
-                <td> 
-                    <a href="https://academico.quixada.ufc.br/sisac/">
-                        <div className="circulo">
-                            <img src={Sisac} alt="SISAC"/>
-                        </div>
-                    </a>
-                </td>
-                <td>
-                    <a href="https://sistemas.quixada.ufc.br/gpa-pesquisa">
-                        <div className="circulo-Gpa">
-                            <img  src={Gpa} alt="GPA"/>
-                        </div>
-                    </a>
-                </td>
-                <td> 
-                    <a href="https://contest.quixada.ufc.br/login">
-                        <div className="circulo-contest">
-                            <img  src={Contest} alt="CONTEST"/>
-                        </div>
-                    </a>
-                </td>
-            </tr>
-        </table>
-            </center>
+                <center>
+                <Row>
+                    <Col>
+                        <a href="https://academico.quixada.ufc.br/sippa/">
+                            <div className="circulo">
+                                <img src={Sippa} alt="SIPPA"/>
+                            </div>
+                        </a>
+                    </Col>
+                    <Col>
+                        <a href="https://academico.quixada.ufc.br/savi/">
+                            <div className="circulo">
+                                <img src={Savi}  alt="SAVI"/>
+                            </div>
+                        </a> 
+                    </Col>
+                    <Col>
+                        <a href="https://academico.quixada.ufc.br/sisac/">
+                            <div className="circulo">
+                                <img src={Sisac} alt="SISAC"/>
+                            </div>
+                        </a>
+                    </Col>
+                </Row>
+                </center>
+                
         </div>
 
         <div class="footer">
