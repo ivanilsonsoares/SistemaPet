@@ -3,6 +3,7 @@ exports.up = function(knex) {
     return knex.schema.createTable('projects', function(table){
         table.increments();
         table.string('name').notNullable();
+        table.string('imagem').notNullable();
         table.string('description').notNullable();
         table.string('organizadores').notNullable();
         

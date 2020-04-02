@@ -9,9 +9,8 @@
 
 body{
     font: 400 14px Roboto, sans-serif;
-    background-image: url('./assets/backgroud.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url('./assets/fundo.png');
+    
     -webkit-font-smoothing: antialiased;
 }
 

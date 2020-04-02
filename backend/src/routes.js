@@ -1,11 +1,14 @@
 const express = require('express');
 const multer = require('multer');
+const uploadConfig = require('./config/upload');
+
+
 const UserController = require('./controllers/UserController');
 const IncidentController = require('./controllers/IncidentController');
 const ProfileController = require('./controllers/ProfileController');
 const SessionController = require('./controllers/SessionController');
 const ProjectsController = require('./controllers/ProjectsController');
-const uploadConfig = require('./config/upload');
+
 
 const routes = express.Router();
 const upload = multer(uploadConfig);
@@ -23,7 +26,7 @@ routes.get('/incidents', IncidentController.buscar);
 routes.delete('/incidents/:id', IncidentController.delete);
 
 routes.get('/projects', ProjectsController.index);
-routes.post('/projects', ProjectsController.create);
+routes.post('/projects',upload.single('imagem') ,ProjectsController.create);
 routes.delete('/projects/:id', ProjectsController.delete);
 
 

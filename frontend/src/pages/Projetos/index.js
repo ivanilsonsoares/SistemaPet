@@ -48,6 +48,7 @@ export default function Profile(){
                             <p>{projetos.name}</p>
                             <strong>Descrição:</strong>
                             <p>{projetos.description}</p>
+                            <header style={{ backgroundImage: `url(http://localhost:3333/files/${projetos.imagem})` }}/>
                             <strong>Organização:</strong>
                             <p>{projetos.organizadores}</p>
                         </li>

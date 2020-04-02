@@ -12,15 +12,17 @@ img.d-block.w-50 {
 .profile-container h1{
     margin-top: 1px;
     margin-bottom: 24px;
-    color: lightyellow;
+    color: black !important;
     
 }
 
 .profile-container ul{
     display: grid;
-    
     grid-gap: 24px;
     list-style: none;
+    width: 75%;
+    margin-top: 1%;
+    margin-left: 1%;
     
 }
 
@@ -29,6 +31,7 @@ img.d-block.w-50 {
     padding: 24px;
     border-radius: 8px;
     position: relative;
+    box-shadow: 0 0 8px black;
 }
 
 .profile-container ul li button{
@@ -60,19 +63,34 @@ img.d-block.w-50 {
 }
 
 .profile-container .content {
+    background-color: white;
     display: flex;
+    border-radius: 6px;
 }
 
 .profile-container .content ul{
     width: 75%;
 }
 
+.profile-container .content header{
+    width: 100%;
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+
 .profile-container .content .not {
-    background-color: white;
+    
     margin-left: 3%;
     height: -webkit-fill-available;
-    border-radius: 3%;
+    border-radius: 1%;
     width: 22%;
+    margin-top: 1%;
+    box-shadow: 0 0 8px black;
+
+    margin-right: 5%;
     
 }
 
@@ -102,7 +120,7 @@ img.d-block.w-50 {
     padding: 24px;
     border-radius: 8px;
     position: relative;
-    background-color: #FFF;
+    
     width: 83%;
     max-width: 1180px;
     padding: 0 30px;
@@ -113,7 +131,11 @@ img.d-block.w-50 {
     display: flex;
     background-position: center;
     margin-left: 22%;
+
+
 }
+
+
 
 .nav-bar .cont .space{
     margin-left: 22%;
@@ -122,7 +144,7 @@ img.d-block.w-50 {
 .nav-bar .circulo{
     width: 210px;
     height: 127px;
-    background: #FFFFFF;
+    
     border-radius: 20px;
 
     margin-left: 6%;
@@ -148,12 +170,11 @@ img.d-block.w-50 {
 }
 
 .menu ul{
-    
     list-style-type: none;
     margin: 0;
-    padding: 20px;
+    padding: 15px!important;
     overflow: hidden;
-    background-color: #002130ab;
+    background-color: #000000d9!important;
 }
 
 .menu img {
@@ -182,7 +203,7 @@ img.d-block.w-50 {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color:#002130ab;
+    background-color:#000000d9 !important;
     color: white;
     text-align: center;
     padding: 1%;

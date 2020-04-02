@@ -12,9 +12,12 @@ module.exports ={
     async create(request, response){
         const{name , description, organizadores} = request.body;
         const user_email = request.headers.authorization;
+        const {filename} = request.file;
+
 
         const [id] = await connection('projects').insert({
             name,
+            imagem : filename,
             description,
             organizadores,
             user_email

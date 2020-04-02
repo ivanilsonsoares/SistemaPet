@@ -78,6 +78,7 @@ export default function Profile(){
                             <p>{incident.title}</p>
                             <strong>Descrição:</strong>
                             <p>{incident.description}</p>
+                            <header style={{ backgroundImage: `url(http://localhost:3333/files/${incident.imagem})` }}/>
                             <strong>Cadastro feito:</strong>
                             <p>{incident.user_email}</p>
 

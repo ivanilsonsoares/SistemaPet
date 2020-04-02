@@ -7,21 +7,19 @@ import Api from '../../services/api'
 
 export default function NewIncidents(){
     const [title, setTitle] = useState('');
-/*     const [imagem, setImagem] = useState(null); */
+    const [imagem, setImagem] = useState(null);
     const [description, setDescription] = useState('');
     
     const ongId = localStorage.getItem('ongId');
     const history = useHistory();
     async function handleNewIncidents(e){
         e.preventDefault();
-
-        const data ={
-            title,
-           /*  imagem, */
-            description,
-            
-        };
-
+        const data = new FormData();
+        
+        data.append('title',title);
+        data.append('imagem',imagem);
+        data.append('description',description);
+        
         try{
             await Api.post('incidents', data,{
                 headers:{
@@ -61,13 +59,13 @@ export default function NewIncidents(){
                     value={description}
                     onChange={e => setDescription(e.target.value)}
                     />
-{/*                     <label className="imagem">
+                    <label className="imagem">
                         <input type="file"
-                        value={imagem}
                         onChange={e => setImagem(e.target.files[0])}
                         />
                         
-                    </label> */}
+                    </label>
+                    *A imagem não deve conter espaço no seu nome
                     <button className="button" type="submit">Cadastrar</button>
                 </form>
             </div>

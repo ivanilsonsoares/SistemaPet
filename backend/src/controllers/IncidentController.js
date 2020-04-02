@@ -6,18 +6,22 @@ module.exports ={
 
 
         const incidents = await connection('incidents').join('users', 'user_email', '=', 'incidents.user_email')
-            .limit(5).offset((page - 1) * 5).select(['incidents.*'
+            .limit(5).offset((page - 1) * 5).select(['incidents.imagem','incidents.*'
             ,'users.name'
             ,'users.email']);
-     
+            
+
+/*         incident.virtual('imagem_url').get(function(){
+            return `http://localhost:3333/files/${this.imagem}`
+        })  */
         return response.json(incidents);
     },
+    
 
     async buscar(request, response){
         const { title } = request.body;
 
-        const incidents = await connection('incidents').where('title', title).select('*');
-
+        const incidents = await connection('incidents').where('title', title).select('*');    
         return response.json(incidents);
     },
 
@@ -33,6 +37,7 @@ module.exports ={
             description,
             user_email
         });
+
 
         return response.json({ id });
     },

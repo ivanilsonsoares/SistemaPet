@@ -76,6 +76,7 @@ export default function Profile(){
             <div className="profile-container">
 
             <div className="content">
+
                 <ul>
                     {incidents.map(incident => (
                         <li key={incident.id}>
@@ -83,6 +84,7 @@ export default function Profile(){
                             <p>{incident.title}</p>
                             <strong>Descrição:</strong>
                             <p>{incident.description}</p>
+                            <header style={{ backgroundImage: `url(http://localhost:3333/files/${incident.imagem})` }}/>
                     </li>
                     ))}
                 </ul>
