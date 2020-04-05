@@ -1,15 +1,14 @@
-const connection = require('../database/connection');
+const User = require('../models/User');
 
 module.exports = {
-    async create(request, response){
-        const { email } = request.body;
+    async create(req, res){
+        const { email, name } = req.body;
 
-        const users = await connection('users').where('email', email).select('name').first();
+        let user = await User.findOne({ email });
 
-        if(!users){
-            return response.status(400).json({ Error: 'Usuário não encontrado com esse email. '});
+        if(!user){
+            user = await User.create({email , name});
         }
-
-        return response.json(users);
+        return res.json({user});
     }
-}
+};

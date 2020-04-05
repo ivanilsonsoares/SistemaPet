@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState , useMemo} from 'react';
 import { Link, useHistory } from 'react-router-dom'
 import {FiArrowLeft} from 'react-icons/fi';
 import './styles.css';
@@ -10,20 +10,22 @@ export default function NewIncidents(){
     const [imagem, setImagem] = useState(null);
     const [description, setDescription] = useState('');
     
-    const ongId = localStorage.getItem('ongId');
     const history = useHistory();
+    const preview = useMemo(()=>{
+        return imagem ? URL.createObjectURL(imagem): null;
+    }, [imagem])
+
     async function handleNewIncidents(e){
         e.preventDefault();
         const data = new FormData();
-        
+        const user_id = localStorage.getItem('user');
         data.append('title',title);
         data.append('imagem',imagem);
         data.append('description',description);
-        
         try{
-            await Api.post('incidents', data,{
+            await Api.post('information', data,{
                 headers:{
-                    Authorization: ongId,
+                    Authorization: {user_id},
                 }
             });
 
@@ -59,7 +61,7 @@ export default function NewIncidents(){
                     value={description}
                     onChange={e => setDescription(e.target.value)}
                     />
-                    <label className="imagem">
+                    <label className="imagem" style={{backgroundImage: `url(${preview})`}}>
                         <input type="file"
                         onChange={e => setImagem(e.target.files[0])}
                         />

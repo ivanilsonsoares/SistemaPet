@@ -22,9 +22,13 @@ export default function Register(){
         };
 
         try{
-            const response = await Api.post('users', data);
+            const response = await Api.post('sessions', data);
+            const { id } = response.data;
+            const { name } = response.data;
 
-            alert(`Seu ID de acesso: ${response.data.id}`);
+            alert(`Seu ID de acesso: ${name}`);
+            localStorage.setItem('name', name);
+            localStorage.setItem('User', id);
 
             history.push('/profile');
         }catch(err){

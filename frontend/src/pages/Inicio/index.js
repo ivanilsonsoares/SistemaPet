@@ -19,19 +19,15 @@ import Col from 'react-bootstrap/Col'
 
 
 export default function Profile(){
-    const [incidents, setIncidents ] = useState([]);
-    const ongId = localStorage.getItem('ongId');
+    const [information, setInformation ] = useState([]);
     useEffect(()=>{
-        api.get('profile', {
-            headers:{
-                Authorization: ongId,
-            }
-        }).then(response =>{
-            setIncidents(response.data);
-        })
-    },[ongId]);
+        async function loadInformation(){
+            const response = await api.get('information',{}); 
+            setInformation(response.data);
+        }
+        loadInformation();
+    },[]);
 
-    
 
     return(
         <div>
@@ -77,13 +73,13 @@ export default function Profile(){
             <div className="content">
 
                 <ul>
-                    {incidents.map(incident => (
-                        <li key={incident.id}>
+                    {information.map(informations => (
+                        <li key={informations._id}>
                             <strong>Titulo:</strong>
-                            <p>{incident.title}</p>
+                            <p>{informations.title}</p>
                             <strong>Descrição:</strong>
-                            <p>{incident.description}</p>
-                            <header style={{ backgroundImage: `url(http://localhost:3333/files/${incident.imagem})` }}/>
+                            <p>{informations.description}</p>
+                            <header style={{ backgroundImage: `url(${informations.imagem_url})` }}/>
                     </li>
                     ))}
                 </ul>
@@ -163,7 +159,7 @@ export default function Profile(){
                 
         </div>
 
-        <div class="footer">
+        <div className="footer">
             Copyright &copy; 2020 Pet-SI
         </div>
         

@@ -15,17 +15,18 @@ import './styles.css';
 
 export default function Profile(){
     const [projects, setProjects] = useState([]);
-    const ongId = localStorage.getItem('ongId');
+    const ongId = localStorage.getItem('user');
     const history = useHistory(); 
     useEffect(()=>{
-        api.get('projects', {
-            headers:{
-                Authorization: ongId,
-            }
-        }).then(response =>{
+        async function loadProjects(){
+            const ongId = localStorage.getItem('ongId');
+            const response = await api.get('projects',{
+                headers:{ ongId }
+            }); 
             setProjects(response.data);
-        })
-    },[ongId])
+        }
+        loadProjects();
+    },[]);
 
     async function handleDeleteIncident(id){
         try{
@@ -72,14 +73,14 @@ export default function Profile(){
                     {projects.map(projetos => (
                         <li key={projetos.id}>
                             <strong>Nome do Projeto:</strong>
-                            <p>{projetos.name}</p>
+                            <p>{projetos.title}</p>
                             <strong>Descrição:</strong>
                             <p>{projetos.description}</p>
-                            <header style={{ backgroundImage: `url(http://localhost:3333/files/${projetos.imagem})` }}/>
+                            <header style={{ backgroundImage: `url(${projetos.imagem_url})` }}/>
                             <strong>Organização:</strong>
-                            <p>{projetos.organizadores}</p>
+                            <p>{projetos.organization}</p>
                             <strong>Cadastro feito:</strong>
-                            <p>{projetos.user_email}</p>
+                            <p>{projetos.user}</p>
                             
                             <button onClick={() => handleDeleteIncident(projetos.id)} type="button">
                                 <FiTrash2 size={20} color="#a8a8a3"/>
@@ -159,7 +160,7 @@ export default function Profile(){
                 
         </div>
 
-        <div class="footer">
+        <div className="footer">
             Copyright &copy; 2020 Pet-SI
         </div>
         

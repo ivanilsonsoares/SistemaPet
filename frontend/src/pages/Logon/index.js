@@ -16,8 +16,8 @@ export default function Logon(){
         try{
             const response = await api.post('sessions', { email });
 
-            localStorage.setItem('ongId',email);
-            localStorage.setItem('ongName',response.data.name);
+            localStorage.setItem('email',email);
+            localStorage.setItem('name',response.data.name);
 
             history.push('/profile');
         }catch(err){

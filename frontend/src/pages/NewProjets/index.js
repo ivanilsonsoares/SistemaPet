@@ -6,10 +6,10 @@ import logo from '../../assets/logo.png';
 import Api from '../../services/api'
 
 export default function NewIncidents(){
-    const [name, setName] = useState('');
+    const [title, setTitle] = useState('');
     const [imagem, setImagem] = useState(null);
     const [description, setDescription] = useState('');
-    const [organizadores, setOrganizadores] = useState('');
+    const [organization, setOrganization] = useState('');
     const ongId = localStorage.getItem('ongId');
     const history = useHistory();
     async function handleNewIncidents(e){
@@ -17,10 +17,10 @@ export default function NewIncidents(){
 
         const data = new FormData();
         
-        data.append('name',name);
+        data.append('title',title);
         data.append('imagem',imagem);
         data.append('description',description);
-        data.append('organizadores',organizadores);
+        data.append('organization',organization);
 
         try{
             await Api.post('projects', data,{
@@ -29,7 +29,7 @@ export default function NewIncidents(){
                 }
             });
 
-            history.push('/profile');
+            history.push('/list');
         }catch(err){
             alert('Erro no cadastro, tente novamento.');
         }
@@ -53,8 +53,8 @@ export default function NewIncidents(){
                 <form onSubmit={handleNewIncidents}>
                     <input 
                     placeholder="Nomde do projeto"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
+                    value={title}
+                    onChange={e => setTitle(e.target.value)}
                     />
                     <textarea 
                     placeholder="Descrição"
@@ -63,8 +63,8 @@ export default function NewIncidents(){
                     />
                     <input 
                     placeholder="Organizadores"
-                    value={organizadores}
-                    onChange={e => setOrganizadores(e.target.value)}
+                    value={organization}
+                    onChange={e => setOrganization(e.target.value)}
                     />
                     <label className="imagem">
                         <input type="file"

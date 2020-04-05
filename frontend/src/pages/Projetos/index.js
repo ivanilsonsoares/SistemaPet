@@ -15,16 +15,13 @@ import { Link } from 'react-router-dom';
 
 export default function Profile(){
     const [projects, setProjects] = useState([]);
-    const ongId = localStorage.getItem('Id');
     useEffect(()=>{
-        api.get('projects', {
-            headers:{
-                Authorization: ongId,
-            }
-        }).then(response =>{
+        async function loadProjects(){
+            const response = await api.get('projects',{}); 
             setProjects(response.data);
-        })
-    },[ongId])
+        }
+        loadProjects();
+    },[]);
 
     return(
         <div>
@@ -46,12 +43,12 @@ export default function Profile(){
                     {projects.map(projetos => (
                         <li key={projetos.id}>
                             <strong>Nome do Projeto:</strong>
-                            <p>{projetos.name}</p>
+                            <p>{projetos.title}</p>
                             <strong>Descrição:</strong>
                             <p>{projetos.description}</p>
-                            <header style={{ backgroundImage: `url(http://localhost:3333/files/${projetos.imagem})` }}/>
+                            <header style={{ backgroundImage: `url(${projetos.imagem_url})` }}/>
                             <strong>Organização:</strong>
-                            <p>{projetos.organizadores}</p>
+                            <p>{projetos.organization}</p>
                         </li>
                     ))}
                 </ul>
@@ -127,7 +124,7 @@ export default function Profile(){
                 
         </div>
 
-        <div class="footer">
+        <div className="footer">
             Copyright &copy; 2020 Pet-SI
         </div>
         

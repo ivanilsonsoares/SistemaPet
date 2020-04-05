@@ -13,28 +13,26 @@ import api from '../../services/api';
 import './styles.css';
 
 export default function Profile(){
-    const [incidents, setIncidents ] = useState([]);
-    const ongId = localStorage.getItem('ongId');
-    const ongName = localStorage.getItem('ongName');
+    const [information, setInformation ] = useState([]);
+    const id_user = localStorage.getItem('user');
+    const Name = localStorage.getItem('Name');
     const history = useHistory(); 
     useEffect(()=>{
-        api.get('profile', {
-            headers:{
-                Authorization: ongId,
-            }
-        }).then(response =>{
-            setIncidents(response.data);
-        })
-    },[ongId])
+        async function loadInformation(){
+            const response = await api.get('information',{}); 
+            setInformation(response.data);
+        }
+        loadInformation();
+    },[]);
 
     async function handleDeleteIncident(id){
         try{
-            await api.delete(`incidents/${id}`,  {
+            await api.delete(`information/${id}`,  {
                 headers:{
-                    Authorization: ongId,
+                    Authorization: id_user,
                 }
             });
-            setIncidents(incidents.filter(incident => incident.id !== id));
+            setInformation(information.filter(information => information.id !== id));
         }catch(err){
             alert("Erro, tente novamente.");
         }
@@ -65,22 +63,22 @@ export default function Profile(){
             </div>
             <div className="profile-container">
             <header>
-                <span>Bem- vindo, {ongName}</span>
+                <span>Bem- vindo, {Name}</span>
             </header>
             <h1>Infomações Cadastradas</h1>
             <div className="content">
                 <ul>
-                    {incidents.map(incident => (
-                        <li key={incident.id}>
+                    {information.map(informations => (
+                        <li key={informations._id}>
                             <strong>Titulo:</strong>
-                            <p>{incident.title}</p>
+                            <p>{informations.title}</p>
                             <strong>Descrição:</strong>
-                            <p>{incident.description}</p>
-                            <header style={{ backgroundImage: `url(http://localhost:3333/files/${incident.imagem})` }}/>
+                            <p>{informations.description}</p>
+                            <header style={{ backgroundImage: `url(${informations.imagem_url})` }}/>
                             <strong>Cadastro feito:</strong>
-                            <p>{incident.user_email}</p>
+                            <p>{informations.id}</p>
 
-                            <button onClick={() => handleDeleteIncident(incident.id)} type="button">
+                            <button onClick={() => handleDeleteIncident(informations.id)} type="button">
                                 <FiTrash2 size={20} color="#a8a8a3"/>
                             </button>
                     </li>
@@ -159,7 +157,7 @@ export default function Profile(){
                 </center>
                 
         </div>
-        <div class="footer">
+        <div className="footer">
             Copyright &copy; 2020 Pet-SI
         </div>
         

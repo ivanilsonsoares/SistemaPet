@@ -429,7 +429,7 @@ export default function Profile(){
                 </center>
                 
         </div>
-        <div class="footer">
+        <div className="footer">
             Copyright &copy; 2020 Pet-SI
         </div>
         
