@@ -7,15 +7,21 @@ import Sisac from '../../assets/sisac.png';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
+
+
 import {Link, useHistory } from 'react-router-dom';
-import {FiPower, FiTrash2, FiMapPin, FiChevronRight} from 'react-icons/fi';
+import {FiPower, FiTrash2, FiMapPin} from 'react-icons/fi';
 import api from '../../services/api';
 import './styles.css';
 
 export default function Profile(){
     const [information, setInformation ] = useState([]);
     const id_user = localStorage.getItem('user');
-    const Name = localStorage.getItem('Name');
+    /* const Name = localStorage.getItem('Name'); */
     const history = useHistory(); 
     useEffect(()=>{
         async function loadInformation(){
@@ -47,24 +53,32 @@ export default function Profile(){
     return(
         <div>
             <div className="menu">
-                <ul> 
-                    <img src={LogoImg} alt="Be The Hero"/>
-                    <li>
-                        <a onClick={handleLogout}   href={'/'} type="button">
-                            <FiPower size={18} color="#E02041"/>
-                        </a>
-                    </li>
-                    <li><Link to="/projets/new">Cadastrar projeto</Link></li>
-                    <li><Link to="incidents/new">Cadastrar nova informação</Link></li>
-                    <li><Link to="/register">Cadastrar Usuario</Link></li>
-                    <li><Link to="/list">Projetos</Link></li>
-                    <li><Link className="active" to="/profile">Home</Link></li>
-                </ul>
+            <Navbar className="bg-color" expand="lg">
+            <Navbar.Brand href="/profile">
+                <div className="conf">
+                    <img src={LogoImg} alt="Pet-SI"></img>    
+                </div>  
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                <Nav.Link ><Link to="/profile">Inicio</Link></Nav.Link>
+                <Nav.Link ><Link to="/list">Projetos</Link></Nav.Link>
+                <DropdownButton title="Cadastros">
+                    <Dropdown.Item><Link to="/projets/new">Cadastrar Projetos</Link></Dropdown.Item>
+                    <Dropdown.Item><Link to="/incidents/new">Cadastrar informações</Link></Dropdown.Item>
+                    <Dropdown.Item><Link to="/register">Cadastrar Usuario</Link></Dropdown.Item>
+                </DropdownButton>
+                <Nav.Link >
+                    <a onClick={handleLogout}   href={'/'} type="button">
+                        <FiPower size={18} color="#E02041"/>
+                    </a>
+                </Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+            </Navbar>
             </div>
             <div className="profile-container">
-            <header>
-                <span>Bem- vindo, {Name}</span>
-            </header>
             <h1>Infomações Cadastradas</h1>
             <div className="content">
                 <ul>
@@ -85,45 +99,6 @@ export default function Profile(){
                     ))}
                 </ul>
                 
-                <div className="not">
-                <h1>Artigos</h1>
-                    <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
-                        <h2>
-                            <FiChevronRight size={18} color="#000"/> 
-                            A aplicação da refatoração de software para a solução da complexidade no código do SEven
-                        </h2>
-                    </a>
-                    <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
-                        <h2>
-                            <FiChevronRight size={18} color="#000"/> 
-                            A aplicação da refatoração de software para a solução da complexidade no código do SEven
-                        </h2>
-                    </a>
-                    <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
-                        <h2>
-                            <FiChevronRight size={18} color="#000"/> 
-                            A aplicação da refatoração de software para a solução da complexidade no código do SEven
-                        </h2>
-                    </a>
-                    <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
-                        <h2>
-                            <FiChevronRight size={18} color="#000"/> 
-                            A aplicação da refatoração de software para a solução da complexidade no código do SEven
-                        </h2>
-                    </a>
-                    <a 
-                        href="https://drive.google.com/file/d/1WbpXCU5ChE74SvA5AslS5jSbRjRUamC0/view?usp=sharing">
-                        <h2>
-                            <FiChevronRight size={18} color="#000"/> 
-                            A aplicação da refatoração de software para a solução da complexidade no código do SEven
-                        </h2>
-                    </a>
-                    
-                </div>
             </div>
             
         </div>

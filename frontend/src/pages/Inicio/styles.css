@@ -69,7 +69,7 @@ img.d-block.w-50 {
 }
 
 .profile-container .content ul{
-    width: 75%;
+    width: 98% !important;
 }
 
 .profile-container .content header{
@@ -88,7 +88,7 @@ img.d-block.w-50 {
     border-radius: 1%;
     width: 22%;
     margin-top: 1%;
-    box-shadow: 0 0 8px black;
+    box-shadow: 0 0 3px black !important;
 
     margin-right: 5%;
     
@@ -112,9 +112,6 @@ img.d-block.w-50 {
     margin-top: 5%;
     text-align: center;
 }
-
-
-
 
 .nav-bar{
     padding: 24px;
@@ -177,25 +174,26 @@ img.d-block.w-50 {
     background-color: #000000d9!important;
 }
 
-.menu img {
-    width: 10%;
-    margin-left: 132px;
+a.navbar-brand {
+    height: 30px !important;
+    width: 75% !important;
+    text-decoration: none !important;
+}
+a {
+    color: #0062cc !important;
+    text-decoration: none !important;
+    background-color: transparent;
+}
+.bg-color {
+    background-color: #000000d9!important;
 }
 
-.menu li {
-    float: right;
+.menu .conf {
+    width: 100% !important;
 }
 
-.menu li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-  
-.menu li a:hover {
-    background-color: #111;
+.navbar-expand-lg .navbar-collapse {
+    margin-left: -10px;
 }
 
 .footer{
@@ -208,3 +206,4 @@ img.d-block.w-50 {
     text-align: center;
     padding: 1%;
 }
+

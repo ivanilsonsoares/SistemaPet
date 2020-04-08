@@ -15,7 +15,7 @@ const InformationSchema = new mongoose.Schema({
 });
 
 InformationSchema.virtual('imagem_url').get(function(){
-    return `http://localhost:3333/files/${this.imagem}`
+    return `https://petsi-beckend.herokuapp.com/files/${this.imagem}`
 })
 
 module.exports = mongoose.model('Information', InformationSchema);

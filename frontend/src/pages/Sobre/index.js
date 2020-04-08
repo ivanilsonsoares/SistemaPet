@@ -13,19 +13,31 @@ import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+
 export default function Profile(){
     
     return(
         <div>
             <div className="menu">
-                <ul> 
-                    <img src={LogoImg} alt="Pet-SI"/>
-                    <li><Link to="/login">Login</Link></li>
-                    <li><Link to="/sobre">Sobre o programa</Link></li>
-                    <li><Link to="/equipe">Equipe</Link></li>
-                    <li><Link to="/projetos">Projetos</Link></li>
-                    <li><Link className="active" to="/">Home</Link></li>
-                </ul>
+            <Navbar className="bg-color" expand="lg">
+            <Navbar.Brand href="/">
+                <div className="conf">
+                    <img src={LogoImg} alt="Pet-SI"></img>    
+                </div>  
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                <Nav.Link ><Link to="/">Inicio</Link></Nav.Link>
+                <Nav.Link ><Link to="/projetos">Projetos</Link></Nav.Link>
+                <Nav.Link ><Link to="/sobre">Sobre</Link></Nav.Link>
+                <Nav.Link ><Link to="/equipe">Equipe</Link></Nav.Link>
+                <Nav.Link ><Link to="/login">Login</Link></Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+            </Navbar>
             </div>
             <div className="profile-container">
                 <div className="sobre">

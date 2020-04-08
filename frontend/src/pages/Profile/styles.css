@@ -188,7 +188,7 @@ img.d-block.w-50 {
 
 .menu li a {
     display: block;
-    color: white;
+    color: #0062cc !important;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -197,6 +197,43 @@ img.d-block.w-50 {
 .menu li a:hover {
     background-color: #111;
 }
+
+.btn-primary:hover {
+    color: rgba(31, 34, 241, 0.952) !important;
+    background-color: #212121 !important;
+    border-color: #0062cc;
+}
+.dropdown-menu {
+    background-color: #28292b;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: #212121 !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #212121 !important;
+    border-color: #007bff;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    margin-left: -32px !important;
+    padding-right: 2% !important;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgba(242, 235, 235, 0.99) !important;
+    border-color: rgba(252, 252, 252, 0.85) !important;
+    background-color: white !important;
+}
+
 
 .footer{
     position: relative;

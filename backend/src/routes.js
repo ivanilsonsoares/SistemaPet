@@ -14,7 +14,7 @@ routes.post('/sessions',SessionController.create);
 
 routes.post('/information',upload.single('imagem'),InformationController.create);
 routes.get('/information',InformationController.index);
-routes.delete('/information/:id',ProjectsController.delete);
+routes.delete('/information/:id',InformationController.delete);
 routes.post('/projects',upload.single('imagem'),ProjectsController.create);
 routes.get('/projects',ProjectsController.index);
 routes.delete('/projects/:id',ProjectsController.delete);

@@ -166,6 +166,7 @@ img.d-block.w-50 {
 .menu img {
     width: 10%;
     margin-left: 132px;
+    margin-top: -2% !important;
 }
 
 .menu li {
